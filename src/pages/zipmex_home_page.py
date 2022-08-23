@@ -8,6 +8,7 @@ class ZipmexHomePage(PageFactory):
     locators = {
         "popup_ok_button": "//div[@role='presentation']/div/div/button[contains(text(),'OK')",
         "buy_price": ("XPATH", "(//h6[contains(text(),'Order Book')]/following-sibling::div/div/div/div/div/div/div/div/div/span[@state='sell'])[last()]"),
+        "sell_price": ("XPATH", "(//h6[contains(text(),'Order Book')]/following-sibling::div/div/div/div/div/div/div/div/div/span[@state='buy'])[1]"),
         "vol_24h": ("XPATH","//span[contains(text(),'Vol. 24 Jam')]/following-sibling::span")
     }
 
