@@ -2,10 +2,7 @@ from src.workflow.tokocrypto_work_flow import TokocryptoWorkFlow
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from selenium import webdriver
 import time
-import xlrd
 import xlsxwriter
-
-
 
 def init_driver():
     options = FirefoxOptions()

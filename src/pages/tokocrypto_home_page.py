@@ -14,8 +14,8 @@ class TokocryptoHomePage(PageFactory):
         "canvas": ("XPATH","(//td[contains(@class,'chart-markup-table pane')])[1]"),
         "chart_container": ("XPATH","//div[@id='chart_container']"),
         "chart_iframe": ("XPATH","//iframe[contains(@id,'tradingview')]"),
-        "volume_idr": ("XPATH","//div[text()='Volume Global 24 Jam']/following-sibling::div"),
-        "price_idr": ("XPATH", "//div[text()='Perubahan 24jam']/following-sibling::div/span")
+        "volume_24h": ("XPATH","//div[text()='Volume Global 24 Jam']/following-sibling::div"),
+        "price_24h": ("XPATH", "(//div[text()='Harga terakhir']/following-sibling::div/span)[1]")
     }
 
     def get_buy_price_value(self):
@@ -34,8 +34,8 @@ class TokocryptoHomePage(PageFactory):
     def click_chart_container(self):
         self.chart_container.click()
 
-    def get_volume_idr_value(self):
-        return self.volume_idr.get_text()
+    def get_vol_24h_value(self):
+        return self.volume_24h.get_text()
 
-    def get_price_idr_value(self):
-        return self.price_idr.get_text()
+    def get_price_24h_value(self):
+        return self.price_24h.get_text()
