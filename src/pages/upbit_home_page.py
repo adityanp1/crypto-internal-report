@@ -6,8 +6,8 @@ class UpbitHomePage(PageFactory):
         self.driver = driver
 
     locators = {
-        "buy_price": ("XPATH", "(//tr[@class='down']/td[@class='upB']a/div/strong)[last()]"),
-        "sell_price": ("XPATH", "(//tr[@class='down']/td[@class='downB']a/div/strong)[1]"),
+        "buy_price": ("XPATH", "(//tr[@class='down']/td[@class='upB']/a/div/strong)[last()]"),
+        "sell_price": ("XPATH", "(//tr[@class='up']/td[@class='downB']/a/div/strong)[1]"),
         "vol_24h": ("XPATH", "//dt[text()='Vol. (24h)']/following-sibling::dd/strong)[1]")
     }
 
@@ -19,3 +19,6 @@ class UpbitHomePage(PageFactory):
 
     def get_vol_24h_value(self):
         return self.vol_24h.get_text()
+
+
+        # Request URL: https://crix-api-id.upbit.com/v1/crix/candles/days?code=CRIX.UPBIT.IDR-BTC&count=200&ciqrandom=1661246181397

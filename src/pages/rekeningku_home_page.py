@@ -23,3 +23,5 @@ class RekeningkuHomePage(PageFactory):
 
     def get_price_24h_value(self):
         return self.vol_24h.get_text()
+    
+    # Request URL: https://api.rekeningku.com/v2/chart?t=2&f=1440&id=1

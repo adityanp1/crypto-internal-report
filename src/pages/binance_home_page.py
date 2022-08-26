@@ -6,8 +6,8 @@ class BinanceHomePage(PageFactory):
         self.driver = driver
 
     locators = {
-        "buy_price": ("XPATH", "//div[@class='ask-light'])[last()]"),
-        "sell_price": ("XPATH", "//div[@class='bid-light'])[1]"),
+        "buy_price": ("XPATH", "(//div[@class='ask-light'])[last()]"),
+        "sell_price": ("XPATH", "(//div[@class='bid-light'])[1]"),
         "vol_24h": ("XPATH","//div[@class='tickerItemLabel' and text()='24h Volume(BTC)']/following-sibling::div")
     }
 
@@ -19,3 +19,6 @@ class BinanceHomePage(PageFactory):
 
     def get_vol_24h_value(self):
         return self.vol_24h.get_text()
+
+
+    # Request URL: https://www.binance.com/api/v3/uiKlines?limit=1000&symbol=BTCUSDT&interval=1d

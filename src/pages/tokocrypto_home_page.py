@@ -7,8 +7,8 @@ class TokocryptoHomePage(PageFactory):
         self.driver = driver
 
     locators = {
-        "buy_price": ("XPATH", "(//div[@class='asks']/div/div/div[@class='gm-scroll-view']/div)[last()]"),
-        "sell_price": ("XPATH", "(//div[@class='bids']/div/div/div[@class='gm-scroll-view']/div)[1]"),
+        "buy_price": ("XPATH", "((//div[@class='asks']/div/div/div[@class='gm-scroll-view']/div)[last()]/div/span)[1]"),
+        "sell_price": ("XPATH", "((//div[@class='bids']/div/div/div[@class='gm-scroll-view']/div)[1]/div/span)[1]"),
         "interval_dropdown": ("XPATH","//div[@id='header-toolbar-intervals']/div/div/div"),
         "one_hari_interval_option": ("XPATH","//div[text()='1 hari']"),
         "canvas": ("XPATH","(//td[contains(@class,'chart-markup-table pane')])[1]"),
@@ -39,3 +39,6 @@ class TokocryptoHomePage(PageFactory):
 
     def get_price_24h_value(self):
         return self.price_24h.get_text()
+
+
+        # Request URL: https://www.binance.info/api/v3/klines?symbol=BTCBIDR&interval=1d
